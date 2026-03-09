@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Logout</title>
+
+<style>
+
+body{
+font-family:Poppins;
+background:#0b0b0b;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+text-align:center;
+}
+
+.box{
+background:#111;
+padding:40px;
+border-radius:10px;
+box-shadow:0 0 15px black;
+}
+
+h2{
+color:gold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Anda sedang logout...</h2>
+<p>Mohon tunggu sebentar</p>
+</div>
+
+<script>
+
+/* hapus status login */
+localStorage.removeItem("login")
+
+/* kembali ke halaman login setelah 2 detik */
+setTimeout(function(){
+window.location="login.html"
+},2000)
+
+</script>
+
+</body>
+</html>

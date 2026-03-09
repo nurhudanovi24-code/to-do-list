@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+
+body{
+font-family:Poppins;
+background:#0b0b0b;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+}
+
+.box{
+background:#111;
+padding:40px;
+border-radius:10px;
+width:300px;
+box-shadow:0 0 10px black;
+}
+
+h2{
+text-align:center;
+color:gold;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:10px;
+border:none;
+border-radius:5px;
+background:#1c1c1c;
+color:white;
+}
+
+button{
+width:100%;
+padding:10px;
+margin-top:15px;
+border:none;
+background:gold;
+color:black;
+font-weight:bold;
+border-radius:5px;
+cursor:pointer;
+}
+
+a{
+color:gold;
+font-size:13px;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Login</h2>
+
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p>Belum punya akun? <a href="register.html">Register</a></p>
+
+</div>
+
+<script>
+
+function login(){
+
+let user=document.getElementById("username").value
+let pass=document.getElementById("password").value
+
+let savedUser=localStorage.getItem("username")
+let savedPass=localStorage.getItem("password")
+
+if(user===savedUser && pass===savedPass){
+
+localStorage.setItem("login","true")
+window.location="todo.html"
+
+}else{
+
+alert("Username atau password salah")
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
